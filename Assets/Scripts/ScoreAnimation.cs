@@ -21,10 +21,7 @@ public class ScoreAnimation : MonoBehaviour
 
 	void Update()
 	{
-		if (displayedScore != score)
-		{
-			UpdateScoreAnim();
-		}
+		UpdateScoreAnim();
 	}
 
 	void UpdateScoreAnim()
@@ -52,13 +49,22 @@ public class ScoreAnimation : MonoBehaviour
 		scoreText.text = scoringText;
 
 		/// Colour
-		if (printedScore > 0)
+		Color scoreColor = new Color(1.0f, 1.0f, 1.0f);
+		if (score > 0)
 		{
-			Color scoreColor = new Color(1.0f, 1.0f, 1.0f);
-			float colourShift = Mathf.Sqrt((1 / interpScore) * 1000.0f);
-			scoreColor.b = scoreColor.g = colourShift;
-			scoreText.color = scoreColor;
+			float colourShift = Mathf.Sqrt((1 / interpScore) * 1500.0f);
+
+			if (printedScore < 20000.0f)
+			{
+				scoreColor.b = colourShift * 0.3f;
+			}
+			else
+			{
+				scoreColor.b = scoreColor.g = colourShift;
+			}
 		}
+
+		scoreText.color = Color.Lerp(scoreText.color, scoreColor, Time.deltaTime * 3.0f);
 	}
 
 	public void NewScore(float value)

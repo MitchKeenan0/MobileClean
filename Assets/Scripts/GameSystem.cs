@@ -27,6 +27,8 @@ public class GameSystem : MonoBehaviour
 		InitScoring();
 
 		InitGame();
+
+		Application.targetFrameRate = 30;
     }
 
 
@@ -63,7 +65,7 @@ public class GameSystem : MonoBehaviour
 					ThisDirt.transform.position = RandomOnScreen;
 
 					/// Scale and colour variance
-					float safeIndex = 0.1f * (i + 1);
+					float safeIndex = 0.01f * (i + 1);
 					float dirtIdentity = Mathf.Sqrt(safeIndex * ThisDirt.MaxSize);
 					float scaling = Mathf.Clamp(dirtIdentity, ThisDirt.MinSize, ThisDirt.MaxSize);
 					ThisDirt.InitDirt(scaling);

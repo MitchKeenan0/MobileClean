@@ -40,7 +40,6 @@ public class SweepTouchControl : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		sprite = GetComponent<SpriteRenderer>();
 		SweepDirts = new List<GameObject>();
-
 		game = FindObjectOfType<GameSystem>();
 
 		transform.position = Camera.main.ScreenToWorldPoint(StartPosition);
@@ -86,6 +85,7 @@ public class SweepTouchControl : MonoBehaviour
 
 				bTouching = true;
 				touchStartPosition = touch.position;
+				DeltaTouch = currentTouchPosition - transform.position;
 
 				currentTouchPosition.z = 0.0f;
 				transform.position = currentTouchPosition;

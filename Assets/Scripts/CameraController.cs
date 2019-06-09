@@ -42,7 +42,8 @@ public class CameraController : MonoBehaviour
 
 	public void NewParameters(float sizeValue, Vector3 location)
 	{
-		targetSize = Mathf.Clamp((size * sizeValue * distance), 1.0f, 5.0f);
+		float safeSize = sizeValue + 1.1f;
+		targetSize = Mathf.Clamp((size * sizeValue * distance), 4.0f, 6.0f);
 		targetPosition = location;
 	}
 

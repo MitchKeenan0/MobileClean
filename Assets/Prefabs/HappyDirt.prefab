@@ -47,14 +47,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Drag: 10
-  bExplodes: 0
+  bExplodes: 1
   ExplodeStrength: 1
   TooManyNeighbors: 5
   NeighborlyDistance: 1
   PuffOutEffect: {fileID: 2165793355059598006, guid: 9f970a2d0b4ef794885578654077f253,
     type: 3}
-  MaxSize: 1.5
-  MinSize: 0.15
+  MaxSize: 5
+  MinSize: 0.05
 --- !u!50 &958851740437543676
 Rigidbody2D:
   serializedVersion: 4
