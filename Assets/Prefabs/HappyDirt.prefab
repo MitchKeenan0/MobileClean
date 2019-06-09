@@ -53,8 +53,8 @@ MonoBehaviour:
   NeighborlyDistance: 1
   PuffOutEffect: {fileID: 2165793355059598006, guid: 9f970a2d0b4ef794885578654077f253,
     type: 3}
-  MaxSize: 3
-  MinSize: 0.3
+  MaxSize: 1.5
+  MinSize: 0.15
 --- !u!50 &958851740437543676
 Rigidbody2D:
   serializedVersion: 4
